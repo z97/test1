@@ -48,6 +48,7 @@ export default function FirstTable() {
           m: 1,
           width: "100%",
           justifyContent: "center",
+          paddingX: "1em",
         },
       }}
     >
@@ -127,7 +128,6 @@ export default function FirstTable() {
           onChange={handleChangeSalary}
         />
       </Box>
-      <hr></hr>
       <Typography
         variant="h5"
         align="right"

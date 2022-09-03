@@ -10,5 +10,5 @@ import SecondTable from "./components/SecondTable";
 import TabPanel from "./components/TabPanel";
 
 export default function App() {
-  return <TabPanel children={ "2vhjvfhgfv" } />;
+  return <TabPanel/>;
 }

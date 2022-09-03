@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import FirstTable from './FirstTable';
 import SecondTable from './SecondTable';
+import { padding } from '@mui/system';
 
 export default function LabTabs() {
   const [value, setValue] = React.useState('1');
