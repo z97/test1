@@ -37,7 +37,7 @@ export default function FirstTable() {
     );
   }
   function countPart() {
-    return Math.round(countBase() - (salary - 6749) * 0.6);
+    return Math.round(countBase() - (salary - 6749) * 0.4);
   }
   return (
     <Box
@@ -52,8 +52,8 @@ export default function FirstTable() {
       }}
     >
       <FormControl>
-        <FormLabel>מין</FormLabel>
         <RadioGroup
+        row
           aria-labelledby="demo-controlled-radio-buttons-group"
           name="controlled-radio-buttons-group"
           value={valueGender}
