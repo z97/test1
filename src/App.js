@@ -7,11 +7,8 @@ import FirstTable from "./components/FirstTable";
 import YearsOfSeniority from "./components/YearsOfSeniority";
 import FamilyStatus from "./components/FamilyStatus";
 import SecondTable from "./components/SecondTable";
+import TabPanel from "./components/TabPanel";
 
 export default function App() {
-  return (
-    <Box margin="1em">
-      <FamilyStatus/>
-    </Box>
-  );
+  return <TabPanel children={ "2vhjvfhgfv" } />;
 }

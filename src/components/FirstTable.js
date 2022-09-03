@@ -37,7 +37,7 @@ export default function FirstTable() {
     );
   }
   function countPart() {
-    return Math.round(countBase() - (salary - 6749) * 0.4);
+    return Math.round(countBase() - (salary - 6749) * 0.6);
   }
   return (
     <Box
