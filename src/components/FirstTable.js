@@ -30,14 +30,14 @@ export default function FirstTable() {
   };
 
   function countBase() {
-    return(
-      Math.round((value * 0.02 * 1596 + 1596) + (value * 0.02 * 1596 + 1596) * 0.05 * yearsAfterRetirementAge)
-    )
+    return Math.round(
+      value * 0.02 * 1596 +
+        1596 +
+        (value * 0.02 * 1596 + 1596) * 0.05 * yearsAfterRetirementAge
+    );
   }
   function countPart() {
-    return(
-      Math.round(countBase() - ((salary - 6749) * 0.4))
-    )
+    return Math.round(countBase() - (salary - 6749) * 0.4);
   }
   return (
     <Box
@@ -65,7 +65,13 @@ export default function FirstTable() {
       </FormControl>
 
       <Box sx={{ width: 300 }} margin="auto">
-        <Typography id="input-slider" align="center" gutterBottom variant="h6" paddingBottom={"1em"}>
+        <Typography
+          id="input-slider"
+          align="center"
+          gutterBottom
+          variant="h6"
+          paddingBottom={"1em"}
+        >
           שנות הוותק
         </Typography>
         <Slider
@@ -80,7 +86,13 @@ export default function FirstTable() {
         />
       </Box>
       <Box sx={{ width: 300 }} margin="auto">
-        <Typography id="input-slider" align="center" gutterBottom variant="h6" paddingBottom={"1em"}>
+        <Typography
+          id="input-slider"
+          align="center"
+          gutterBottom
+          variant="h6"
+          paddingBottom={"1em"}
+        >
           כמה שנים מוכן לעבוד אחרי גיל פרישה?
         </Typography>
         <Slider
@@ -94,15 +106,15 @@ export default function FirstTable() {
           onChange={handleChangeYearsAfterRetirementAge}
         />
       </Box>
-
-      <Typography variant="h5" align="right" display={(salary > 6749) ? "none": "show"}>
-        עד 6749 ש''ח - זכאי לקצבת אזרח ותיק מלאה:{" "}
-        {countBase()} ש''ח
-      </Typography>
-      <hr></hr>
       <Box sx={{ width: 300 }} margin="auto">
-        <Typography id="input-slider" align="center" gutterBottom variant="h6" paddingBottom={"1em"}>
-        משכורת
+        <Typography
+          id="input-slider"
+          align="center"
+          gutterBottom
+          variant="h6"
+          paddingBottom={"1em"}
+        >
+          משכורת
         </Typography>
         <Slider
           aria-label="Always visible"
@@ -115,15 +127,36 @@ export default function FirstTable() {
           onChange={handleChangeSalary}
         />
       </Box>
-      <Typography variant="h5" align="right" display={(salary <= 6749 || salary >= 10472) ? "none": "show"}>
-         זכאי לקצבת אזרח ותיק חלקית 
-         {" "}{countPart()}  ש''ח
-      </Typography>
       <hr></hr>
-      <Typography variant="h5" align="right" display={( salary >= 10472) ? "show": "none"}>
-      מעל 10472 ש''ח לא זכאי כעת, יקבל בגיל זכאות:
-      {" "}
-      {countBase()}  ש''ח
+      <Typography
+        variant="h5"
+        align="right"
+        display={salary > 6749 ? "none" : "show"}
+      >
+         עד 6749 ש''ח - זכאי לקצבת אזרח ותיק מלאה:  
+        <Typography variant="span" color={"green"} align="right">
+          {" "}{countBase()}{" "}{"ש''ח"}
+        </Typography>
+      </Typography>
+      <Typography
+        variant="h5"
+        align="right"
+        display={salary <= 6749 || salary >= 10472 ? "none" : "show"}
+      >
+        זכאי לקצבת אזרח ותיק חלקית:
+        <Typography variant="span" color={"green"} align="right">
+        {" "}{countPart()}{" "}{"ש''ח"}
+        </Typography>
+      </Typography>
+      <Typography
+        variant="h5"
+        align="right"
+        display={salary >= 10472 ? "show" : "none"}
+      >
+        מעל 10472 ש''ח לא זכאי כעת, יקבל בגיל זכאות:
+        <Typography variant="span" color={"green"} align="right">
+        {" "}{countBase()}{" "}{"ש''ח"}
+        </Typography>
       </Typography>
     </Box>
   );
