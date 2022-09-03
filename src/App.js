@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { useState, createContext } from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Paper from "@mui/material/Paper";
+import FirstTable from "./components/FirstTable";
+import YearsOfSeniority from "./components/YearsOfSeniority";
+import FamilyStatus from "./components/FamilyStatus";
+import SecondTable from "./components/SecondTable";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box margin="1em">
+      <FamilyStatus/>
+    </Box>
   );
 }
-
-export default App;
